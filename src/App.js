@@ -1,129 +1,56 @@
 import React, { Component } from 'react';
 import { ModalManager} from 'react-dynamic-modal';
+import styled from 'styled-components';
 import me from './img/me2.png'
 import projects from './img/projects.png'
 import about from './img/about.png'
 import './css/image.css';
-import SideBar from './sideBar';
 import About from './components/about';
-import Projects from './components/projects';
-
+import Intro from './pages/Intro';
+import Projects from './pages/Projects'
 
 
 class App extends Component {
 
-    constructor(props){
+
+    constructor(props) {
         super(props);
-
-        this.state = { height: null,
-                      width:null
-        };
-
-
+        this.state = { width: 0, height: 0 };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
-    componentWillMount(){
-        if(!this.state.projects || !this.state.about) {
-            this.setState({ height: window.innerHeight , width: window.innerWidth});
-
-        }
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
     }
 
-
-    openProjectsModal(){
-        ModalManager.open(<Projects  onRequestClose={() => true}/>);
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
     }
 
-    openAboutModal(){
-        ModalManager.open(<About  onRequestClose={() => true}/>);
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
 
   render() {
-        const width = this.state.width * .15;
-        const height = this.state.height * .8;
+        const {height, width} = this.state;
+
 
     return (
-        <div className="App" style = {{display:'flex'} }>
-            <div style = {{display:'flex'} }>
-                <div className="fadeIn" >
-
-                    <img alt="Me" src={me} style={{height, width}}  />
-
-                </div>
-                <div className="fadeIn" style={styles.textAndProjects}>
-                    <div className="text"  >
-                        <header style={styles.header}> Hi! My name is Antonio Lopez.</header>
-                        <p1 style = {styles.text}> I am an Electrical Engineer, React front end developer and I like to make things work :) </p1>
-                    </div>
-                    <div className="projects" style={styles.projects}>
-                        <img
-                            alt="Projects"
-                            style ={styles.projectsImg}
-                            src={projects}
-                            onClick={this.openProjectsModal.bind(this)}
-
-                        />
-                        <img
-                            alt="Img"
-                            style ={styles.aboutImg}
-                            src={about}
-                            onClick={this.openAboutModal.bind(this)}
-
-
-                        />
-
-                    </div>
-                </div>
-
-            </div>
-            <SideBar/>
-
-        </div>
+        <Container height={height} >
+            <Intro height={height} width={width} history ={this.props.history}/>
+            {/*<Projects height={height} width={width} />*/}
+        </Container>
     );
   }
 }
 
+const Container = styled.div`
+    width: 100%;
+    height: ${props => props.height}px
+    
+`;
 
-const styles = {
-
-    textAndProjects:{
-       display: 'flex',
-       justifyContent: 'space-between',
-        flexDirection: 'column',
-        flex:1,
-        paddingTop: 200,
-        paddingLeft: 100
-
-  },
-    projects: {
-        height: 'fix-content',
-        width: 'fix-content'
-    },
-    projectsImg:{
-        cursor:'pointer'
-
-    },
-    aboutImg:{
-        cursor:'pointer',
-        marginLeft:20
-
-    },
-    text:{
-        color: '#111',
-        fontFamily: 'Helvetica Neue, sans-serif',
-        fontWeight: 'lighter',
-        fontSize: 23
-
-
-    },
-    header:{
-        color: '#111',
-        fontFamily: 'Helvetica Neue, sans-serif',
-        fontWeight: 'lighter',
-        fontSize: 33
-    }
-
-};
 
 export default App;
