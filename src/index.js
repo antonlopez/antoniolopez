@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from './store';
 import App from './App';
 import Projects from './pages/Projects';
+import Audio from './pages/Audio';
 
 
 
@@ -16,7 +17,7 @@ const router = (
             <div>
                 <Route exact path="/" component={App} />
                 <Route exact path="/projects" component={Projects} />
-                {/*<Route path="/view/:postId" component={Single}/>*/}
+                <Route path="/projects/audioplayer" component={Audio}/>
             </div>
 
         </BrowserRouter>

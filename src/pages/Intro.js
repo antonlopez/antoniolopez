@@ -13,6 +13,7 @@ import Projects from '../components/projects';
 
 
 
+
 class Intro extends Component {
 
 
@@ -38,7 +39,7 @@ class Intro extends Component {
                 <CenterContainer>
                     <TextContainer>
                         <Header> Hi! My name is Antonio Lopez.</Header>
-                        <IntroductionText> I am an Electrical Engineer, React front end developer and I like to make things work :) </IntroductionText>
+                        <IntroductionText> I am a React front end developer and I like to make things work :) </IntroductionText>
                     </TextContainer>
                     <NavigatorsContainer>
                         <ImageProject
@@ -51,7 +52,6 @@ class Intro extends Component {
                             src={about}
                             onClick={this.openAboutModal.bind(this)}
                         />
-
                     </NavigatorsContainer>
                 </CenterContainer>
 
@@ -102,6 +102,7 @@ class Intro extends Component {
         padding-top: 1vw;
         display: flex;
         justify-content:space-between;
+        width: 60vw;
         
     `;
 
@@ -112,10 +113,13 @@ class Intro extends Component {
         font-size: 1.5vw;
     `;
 
+
+
     const ImageMyself = styled.img`
         height: 45vw;
         width:15vw;
         padding-top 3vh; 
+        
     `;
 
     const ImageProject = styled.img`

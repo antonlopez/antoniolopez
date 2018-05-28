@@ -4,8 +4,7 @@ import Particles from 'react-particles-js';
 
 const ParticlesBackground = ({height, width, color, backgroundColor}) =>{
     if(color === '#fff'){
-        height = '120vw';
-
+        height = '80vw';
     }
 
 
@@ -30,7 +29,7 @@ const ParticlesBackground = ({height, width, color, backgroundColor}) =>{
                 }}
                 style={{
                     width: {width},
-                    height: '120vw'
+                    height: {height}
                 }}
             />
 
@@ -44,11 +43,15 @@ const ParticlesBackground = ({height, width, color, backgroundColor}) =>{
 
 const Container = styled.div`
     background-color:${props=>props.backgroundColor}
-    position: absolute;
     overflow:scroll;
-    width:100%;
-    height: ${props => props.height};
     z-index: -1;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
 `;
 
 export default ParticlesBackground;

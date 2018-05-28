@@ -16,16 +16,23 @@ class HistoryModal extends Component{
                        <p align='justify' style={styles.text}>
                            I currently work at Wycliffe associates as a software developer, I did my B.S. in Electrical
                            Engineering at the University of Texas at El Paso. I can develop web applications in React/Redux,
-                           and mobile apps in React Native and Android. On my free times I am currently learning to develop unity games.
+                           and mobile apps in React Native and Android. Skills:
                        </p>
+                       <ul style={styles.text}>
+                           <li>Javascript ES6</li>
+                           <li>Python</li>
+                           <li>React ( Redux, Router, Axios, Styled components, Animations)</li>
+                           <li>Django( Websockets, REST API's) </li>
+                           <li>React native</li>
+                           <li>Agile methodology</li>
+                       </ul>
                    </div>
                     <div style={styles.division}>
                         <p style={styles.subHeader}> Personal </p>
                         <p style={styles.text}> I am a believer of Jesus Christ and I want to glorify Him through my life. Currently
-                            I serve at Crosspointe Church playing the ukulele for the worship band.I have been missionary in Different cities of Mexico like Oaxaca, Celaya and Juarez,
+                            I serve at Nona Church helping leading a discussion group. I have been missionary in Different cities of Mexico like Oaxaca, Celaya and Juarez,
                             In U.S. I have served in Kenai, Alaska and South Padre Island in Texas. During college I was involved as a leader at the Baptist Student Ministry
-                            in El paso, Texas. I like sports and enjoy being around people. My Goal is to be a missionary and work part time as a
-                            software developer.
+                            in El paso, Texas. I enjoy being around people and teach them something new if I can.
                         </p>
                         <div style = {styles.video}>
                             <iframe
@@ -67,7 +74,14 @@ const styles = {
         lineHeight: 1
     },
     subHeader:{
-        alignSelf:'center'
+        alignSelf:'center',
+        color: '#111',
+        fontFamily: 'Helvetica Neue, sans-serif',
+        fontWeight: 'bold',
+        letterSpacing: 1,
+        lineHeight: 1,
+        fontSize: '1.2vw',
+
 
     },
     text:{
@@ -78,7 +92,8 @@ const styles = {
         letterSpacing: 1,
         lineHeight: 2,
         width:'80%',
-        alignSelf:'center'
+        alignSelf:'center',
+        fontSize:'1.1vw'
     },
     video:{
         alignSelf:'center'

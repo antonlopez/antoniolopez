@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { ModalManager} from 'react-dynamic-modal';
 import styled from 'styled-components';
-import me from './img/me2.png'
-import projects from './img/projects.png'
-import about from './img/about.png'
 import './css/image.css';
-import About from './components/about';
 import Intro from './pages/Intro';
-import Projects from './pages/Projects'
+
 
 
 class App extends Component {
