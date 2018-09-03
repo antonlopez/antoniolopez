@@ -18,6 +18,7 @@ class App extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        //let promise = new Promise()
     }
 
     componentWillUnmount() {
@@ -45,7 +46,7 @@ class App extends Component {
 const Container = styled.div`
     width: 100%;
     height: ${props => props.height}px
-    
+
 `;
 
 
