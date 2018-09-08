@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ModalManager} from 'react-dynamic-modal';
 import styled from 'styled-components';
 import './css/image.css';
 import Intro from './pages/Intro';

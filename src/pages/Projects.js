@@ -1,44 +1,70 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
-import {fadeIn, headShake} from 'react-animations';
+import {fadeIn} from 'react-animations';
 import ParticlesBackground from '../components/ParticlesBackground';
 import Card from '../components/ProjectCard';
-import bsm3 from '../img/bsm3.png';
-import phoneContainer from '../img/phoneContainer.png'
-import henna from '../img/henna.png';
-
-
-
+import MobileCard from '../components/MobileCard';
+import HomeButton from '../components/HomeBtn';
+//import bsm3 from '../img/bsm3.png';
+import bsmWeb from '../img/bsmWeb.png'
+import henna from '../img/cristoPor.png';
+import mobileImg from '../img/mobile1.png';
+import wa1 from '../img/wa1.png';
+import unity1 from '../img/unityGame.png';
+import jdenticon from '../img/jdenticon.png';
+import localizerGen from '../img/localizerGen.png'
+import localizerTrans from '../img/localizerTrans.png'
 
 
 
 class Projects extends Component {
 
-
-
     render() {
         const bsm = "Web application developed for a student organization that has presence in 200 colleges " +
-            "around Texas.";
+            "around Texas.";    
 
-        const mobile = "Mobile application developed for the Baptist student ministry, available in the App store and Google Playstore";
+        const jdenticonTxt = "Identicon generator from text, created using React and a javascript library named jdenticon.";
+
+        const unityGame = "Racing game developed in a cross platform game engine called Unity.";
+
+        const localizerTransTxt = "Electron desktop app developed in order to help in the translation of websites based on screenshots.";
+
+        const localizerGenTxt = "Desktop App developed in Electron, used to generate a compressed file that contains screenshots and a json file associated to them, so " +
+        "it can be feeded into Localizer translator and translate a website.";
+
+        const mobile = "Mobile application developed in React-Native for the Baptist student ministry, available in the App store and Google Playstore.";
 
         const caminando = "Web application that helps distributing material that teaches how to create henna tattoos to share the gospel in spanish." +
             " Project in development...";
+
+        const wa = "Open source web application developed in React and Django, developed for bible translators used for management and review translations for oral communities."
 
         const {width, height}=this.state || 0;
 
         return (
             <Container>
                 <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>
+                <HomeButton history={this.props.history} />
                 <ProjectsContainer>
                     <ProjectsText>Projects <Line width="80vw"/> </ProjectsText>
-                    <CardsContainer>
-                     <Card reverse={true} height="20vw" width="40vw" img={bsm3} text={bsm}/>
-                     <Card reverse={false} height="15vw" width="10vw" img={phoneContainer} text ={mobile}/>
-                    </CardsContainer>
-                    <CardsContainer singleCard={true}>
-                        <Card reverse={true} height="45vw" width="35vw" img={henna} text={caminando}/>
-                    </CardsContainer>
+
+                     <Card img={wa1} text={wa} header="Translation Exchange" width="57vw" />
+                     <Card img={bsmWeb} text={bsm} header="Baptist student ministry"/>
+                     <Card img={henna} text ={caminando}header ="Cristo por Henna"/>
+                     <MobileCard
+                       color="#ee6f6f"
+                       img={mobileImg}
+                       text={mobile}
+                       width="22vw"
+                       header="BSM Survey app"/>
+                       <Card img={unity1} text ={unityGame} width="57vw" header ="Racing game"/>
+                       <Card img={jdenticon} text ={jdenticonTxt} width="57vw" header ="Identicon Generator"/>
+                       <Card img={localizerTrans} text ={localizerTransTxt} width="57vw" header ="Localizer Translator"/>
+                       <Card img={localizerGen} text ={localizerGenTxt} width="57vw" header ="Localizer Generator"/>
+
+
+
+
                 </ProjectsContainer>
                 <ProjectsContainer>
                     <ProjectsText>Cool Stuff <Line width="78vw"/> </ProjectsText>
@@ -118,9 +144,6 @@ const VideoText = styled.div`
 const Container = styled.div`
         width: 100%;
         height:100%;
-
-
-
     `;
 
 
@@ -131,16 +154,6 @@ const ProjectsContainer = styled.div`
 
     `;
 
-const CardsContainer = styled.div`
-        display: flex;
-        flex-direction: row;
-        justify-content: ${props=> props.singleCard ? '': 'space-around'};
-        padding-left: ${props=> props.singleCard ? '20vw': ''};
-        padding-top: ${props=> props.singleCard ? '3vw': ''};
-
-
-
-    `;
 
 const CoolStuffContainer = styled.div`
      display: flex;
@@ -148,38 +161,12 @@ const CoolStuffContainer = styled.div`
      justify-content: space-around;
 `;
 
-// keyframes returns a unique name based on a hash of the contents of the keyframes
-const HeadShake_animation = keyframes`${headShake}`;
-
-
-const CoolIcon = styled.img`
-    height: 10vw;
-    cursor: pointer;
-    &:hover{
-        animation: ${HeadShake_animation} .7s linear infinite;
-    }
-
-`;
 
 
 const Line = ({width})=> { return( <svg height=".8vw" width="80vw">
                               <line x1="0" y1="0" x2={width} y2="0" style={{stroke:'#fff', strokeWidth:2}} />
                            </svg> )} ;
 
-
-
-const ImgContainer = styled.div `
-    `;
-
-const CenterContainer = styled.div `
-        display:flex;
-        justify-content:center;
-        flex-direction:column;
-        padding-right: 6vw;
-    `;
-
-const IconsContainer = styled.div `
-    `;
 
 const fadeInanimation = keyframes`${fadeIn}`;
 
@@ -192,13 +179,6 @@ const ProjectsText = styled.h1`
         animation: ${fadeInanimation} 1s ease-in-out;
         margin-bottom: 5vw;
         `;
-
-
-const ImageMyself = styled.img`
-        height: 45vw;
-        width:15vw;
-        padding-top 3vh;
-    `;
 
 
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import phone from '../img/phone.png'
 import linkedin from '../img/linkedin.png'
 import location from '../img/location.png'
+import github from '../img/github.png';
 import '../css/image.css';
 
 
@@ -16,13 +17,17 @@ const SideIcons = () =>{
                 <AnchorContainer href="https://www.linkedin.com/in/antonio-lopez-01383012a">Linkedin</AnchorContainer>
 
             </LinkedinContainer>
+            <GithubContainer>
+                <Image alt="github" src={github}/>
+                <AnchorContainer href="https://github.com/antonlopez">Github</AnchorContainer>
+            </GithubContainer>
             <PhoneContainer>
                 <Image alt="phone" src={phone}/>
                 <p> +1 915 704 71 16</p>
             </PhoneContainer>
             <LocationContainer>
                 <LocationImage alt="location" src={location} />
-                <TextContainer> Orlando, Florida</TextContainer>
+                <TextContainer> El Paso, Texas</TextContainer>
             </LocationContainer>
         </Container>
 
@@ -36,6 +41,15 @@ const Container = styled.div`
     flex-direction: column;
     align-self: left;
     width: 12vw;
+`;
+
+const GithubContainer = styled.div`
+    color: #111;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: lighter;
+    font-size:.9vw;
+    padding-top: 1vw;
+    display: flex;
 `;
 
 const LinkedinContainer = styled.div`
@@ -52,9 +66,9 @@ const PhoneContainer = styled.div`
     font-weight: lighter;
     font-size:.9vw;
     display: flex;
-    padding-top: 1vw;
-    
+    padding-top: .3vw;
 `;
+
 const LocationContainer = styled.div`
     color: #111;
     font-family: "Helvetica Neue", sans-serif;
@@ -81,7 +95,6 @@ const Image = styled.img`
     width: 1.5vw;
     align-self: center;
     padding-right: .2vw;
-    
 `;
 
 const LocationImage = styled.img`
@@ -91,7 +104,6 @@ const LocationImage = styled.img`
     width: 1.2vw;
     align-self: center;
     padding-right: .4vw;
-    
 `;
 
 

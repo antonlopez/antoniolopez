@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {fadeIn} from 'react-animations';
-import { ModalManager} from 'react-dynamic-modal';
 import styled, {keyframes} from 'styled-components';
 import ParticlesBackground from '../components/ParticlesBackground';
 import me from '../img/me.png'
@@ -8,8 +7,6 @@ import projects from '../img/projects.png'
 import about from '../img/about.png'
 import '../css/image.css';
 import SideIcons from '../components/SideIcons';
-import About from '../components/about';
-import Projects from '../components/projects';
 
 
 
@@ -17,13 +14,12 @@ import Projects from '../components/projects';
 class Intro extends Component {
 
 
-    openProjectsModal()  {
-        //ModalManager.open(<Projects  onRequestClose={() => true}/>);
+    openProjects()  {
         this.props.history.push('./projects');
     };
 
-    openAboutModal(){
-        ModalManager.open(<About  onRequestClose={() => true}/>);
+    openAbout(){
+          this.props.history.push('./aboutme');
     }
 
 
@@ -45,12 +41,12 @@ class Intro extends Component {
                         <ImageProject
                             alt="Projects"
                             src={projects}
-                            onClick={()=>this.openProjectsModal()}
+                            onClick={()=>this.openProjects()}
                         />
                         <ImageAbout
                             alt="Img"
                             src={about}
-                            onClick={this.openAboutModal.bind(this)}
+                            onClick={()=>this.openAbout()}
                         />
                     </NavigatorsContainer>
                 </CenterContainer>
@@ -71,12 +67,10 @@ class Intro extends Component {
         height:100%;
         display: flex;
         justify-content: space-between;
-        animation: ${fadeInAnimation} 1.5s ease-in-out;
+        animation: ${fadeInAnimation} 1s ease-in-out;
     `;
 
     const TextContainer = styled.div`
-       
-    
     `;
 
     const ImgContainer = styled.div `
@@ -87,9 +81,6 @@ class Intro extends Component {
         justify-content:center;
         flex-direction:column;
         padding-right: 6vw;
-    `;
-
-    const IconsContainer = styled.div `
     `;
 
     const Header = styled.h1`
@@ -103,7 +94,7 @@ class Intro extends Component {
         display: flex;
         justify-content:space-between;
         width: 60vw;
-        
+
     `;
 
     const IntroductionText = styled.p`
@@ -118,8 +109,8 @@ class Intro extends Component {
     const ImageMyself = styled.img`
         height: 45vw;
         width:15vw;
-        padding-top 3vh; 
-        
+        padding-top 3vh;
+
     `;
 
     const ImageProject = styled.img`

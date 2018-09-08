@@ -5,12 +5,12 @@ import {zoomIn} from "react-animations";
 
 
 
-export default ({img, text, header, width}) => {
+export default ({img, text, header, width, color}) => {
 
 
     return(
         <Container>
-            <ImageContainer>
+            <ImageContainer color={color}>
                 <Img width={width} src={img} alt='alt' />
             </ImageContainer>
             <TextContainer>
@@ -61,6 +61,11 @@ const Text = styled.p `
 const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: ${props => props.color};
+    border-radius: .5vw;
 `;
 
 const Img = styled.img`
@@ -73,7 +78,7 @@ const Img = styled.img`
 
 
 const TextContainer = styled.div`
-    width: 100%;
+    width: 39%;
     display: flex;
     flex-direction: column;
     align-items: center;

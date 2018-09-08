@@ -6,9 +6,7 @@ import { Provider } from "react-redux";
 import store from './store';
 import App from './App';
 import Projects from './pages/Projects';
-import Audio from './pages/Audio';
-
-
+import AboutMe from './pages/AboutMe'
 
 const router = (
     <Provider store={store}>
@@ -17,7 +15,8 @@ const router = (
             <div>
                 <Route exact path="/" component={App} />
                 <Route exact path="/projects" component={Projects} />
-                <Route path="/projects/audioplayer" component={Audio}/>
+                <Route exact path="/aboutme" component={AboutMe} />
+                {/* <Route path="/projects/audioplayer" component={Audio}/> */}
             </div>
 
         </BrowserRouter>

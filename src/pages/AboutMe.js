@@ -1,26 +1,32 @@
-import React, {Component} from 'react';
-import { Modal, Effect} from 'react-dynamic-modal';
+import React, { Component } from 'react';
+import styled, {keyframes} from 'styled-components';
+import {fadeIn} from 'react-animations';
+import ParticlesBackground from '../components/ParticlesBackground';
+import HomeButton from '../components/HomeBtn';
 
 
-class HistoryModal extends Component{
-    render(){
-        const { onRequestClose } = this.props;
+class AboutMe extends Component {
+
+    render() {
+      const {width, height}=this.state || 0;
         return (
-            <Modal style={modalStyle}
-                onRequestClose={onRequestClose}
-                effect={Effect.ScaleUp}>
+            <Container>
+                <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>
+                <HomeButton history={this.props.history} />
                 <h1 style={styles.header}>About Me</h1>
                 <div style={styles.container}>
                    <div style={styles.division}>
                        <p style={styles.subHeader}> Professional </p>
                        <p align='justify' style={styles.text}>
-                           I currently work at Wycliffe associates as a software developer, I did my B.S. in Electrical
+                           I worked at Wycliffe associates as a software developer for 1 year, I did my B.S. in Electrical
                            Engineering at the University of Texas at El Paso. I can develop web applications in React/Redux,
-                           and mobile apps in React Native and Android. Skills:
+                           and mobile apps in React Native and Android.
                        </p>
+                       <p style={styles.text}>Skills:</p>
                        <ul style={styles.text}>
                            <li>Javascript ES6</li>
                            <li>Python</li>
+                           <li>Kotlin</li>
                            <li>React ( Redux, Router, Axios, Styled components, Animations)</li>
                            <li>Django( Websockets, REST API's) </li>
                            <li>React native</li>
@@ -29,10 +35,10 @@ class HistoryModal extends Component{
                    </div>
                     <div style={styles.division}>
                         <p style={styles.subHeader}> Personal </p>
-                        <p style={styles.text}> I am a believer of Jesus Christ and I want to glorify Him through my life. Currently
-                            I serve at Nona Church helping leading a discussion group. I have been missionary in Different cities of Mexico like Oaxaca, Celaya and Juarez,
-                            In U.S. I have served in Kenai, Alaska and South Padre Island in Texas. During college I was involved as a leader at the Baptist Student Ministry
-                            in El paso, Texas. I enjoy being around people and teach them something new if I can.
+                        <p style={styles.text}> I am an extroverted person, I like to make new friends. I like sports, I play
+                            soccer, racquetball, tennis and some volleyball. I love to travel, I have been missionary in Different places of Mexico like Oaxaca, Celaya and Juarez,
+                            In U.S. I have served in Kenai, Alaska and South Padre Island in Texas and also had the opportunity to go to Heredia, Costa Rica. During college I was involved as a leader at the Baptist Student Ministry
+                            in El paso, Texas. I enjoy being around people and teach them something new if I can or learn from them.
                         </p>
                         <div style = {styles.video}>
                             <iframe
@@ -47,10 +53,20 @@ class HistoryModal extends Component{
                         </div>
                    </div>
                 </div>
-            </Modal>
+
+            </Container>
         );
     }
 }
+
+const fadeInAnimation = keyframes`${fadeIn}`;
+
+const Container = styled.div`
+        animation: ${fadeInAnimation} .7s ease-in-out;
+        width: 100%;
+        height:100%;
+    `;
+
 
 const styles = {
     container: {
@@ -67,7 +83,7 @@ const styles = {
     header:{
         display: 'flex',
         justifyContent:'center',
-        color: '#111',
+        color: '#fff',
         fontFamily: 'Helvetica Neue, sans-serif',
         fontWeight: 'lighter',
         letterSpacing: 1,
@@ -75,7 +91,7 @@ const styles = {
     },
     subHeader:{
         alignSelf:'center',
-        color: '#111',
+        color: '#fff',
         fontFamily: 'Helvetica Neue, sans-serif',
         fontWeight: 'bold',
         letterSpacing: 1,
@@ -85,7 +101,7 @@ const styles = {
 
     },
     text:{
-        color: '#111',
+        color: '#fff',
         fontFamily: 'Helvetica Neue, sans-serif',
         fontWeight: 'lighter',
         marginLeft: '2%',
@@ -103,32 +119,6 @@ const styles = {
 
 
 
-const modalStyle =
-    {
-        overlay: {
-            position        : 'fixed',
-            top             : 0,
-            left            : 0,
-            right           : 0,
-            bottom          : 0,
-            zIndex          : 99999999,
-            overflow        : 'hidden',
-            perspective     :  1300,
-            backgroundColor : 'rgba(0, 0, 0, 0.3)',
-            overflowY       : 'scroll'
-        },
 
-        content: {
-            position                : 'relative',
-            margin                  : '5% auto',
-            width                   : '90%',
-            border                  : '1px solid rgba(0, 0, 0, .2)',
-            background              : '#fff',
-            overflow                : 'auto',
-            borderRadius            : '4px',
-            outline                 : 'none',
-            boxShadow               : '0 5px 10px rgba(0, 0, 0, .3)',
-        }
-    };
 
-export default HistoryModal;
+export default AboutMe;
