@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import {fadeIn} from 'react-animations';
 import styled, {keyframes} from 'styled-components';
 import ParticlesBackground from '../components/ParticlesBackground';
-import me from '../img/me.png'
-import projects from '../img/projects.png'
-import about from '../img/about.png'
+//import me from '../img/me2.png'
+//import projects from '../img/projects.png'
+//import about from '../img/about.png'
 import '../css/image.css';
 import SideIcons from '../components/SideIcons';
 
 
-
+const me = "https://i.imgur.com/GtDEIwy.png";
+const projects = "https://i.imgur.com/oK012d7.png";
+const about = "https://i.imgur.com/XIWTVJC.png";
 
 class Intro extends Component {
 

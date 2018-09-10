@@ -6,22 +6,29 @@ import Card from '../components/ProjectCard';
 import MobileCard from '../components/MobileCard';
 import HomeButton from '../components/HomeBtn';
 //import bsm3 from '../img/bsm3.png';
-import bsmWeb from '../img/bsmWeb.png'
-import henna from '../img/cristoPor.png';
-import mobileImg from '../img/mobile1.png';
-import wa1 from '../img/wa1.png';
-import unity1 from '../img/unityGame.png';
-import jdenticon from '../img/jdenticon.png';
-import localizerGen from '../img/localizerGen.png'
-import localizerTrans from '../img/localizerTrans.png'
+//import bsmWeb from '../img/bsmWeb.png'
+//import henna from '../img/cristoPor.png';
+//import mobileImg from '../img/mobile1.png';
+//import wa1 from '../img/wa1.png';
+//import unity1 from '../img/unityGame.png';
+//import jdenticon from '../img/jdenticon.png';
+//import localizerGen from '../img/localizerGen.png'
+//import localizerTrans from '../img/localizerTrans.png'
 
-
+const bsmWeb = "https://i.imgur.com/yyTG1FI.png";
+const mobileImg = "https://i.imgur.com/ZSLL7eR.png";
+const henna="https://i.imgur.com/aDmMj07.png";
+const wa1 ="https://i.imgur.com/8kOv7nV.png";
+const unity1 ="https://i.imgur.com/qNzWpmk.png"
+const jdenticon = "https://i.imgur.com/uqq64F0.png";
+const localizerGen = "https://i.imgur.com/3Sjlz0k.png";
+const localizerTrans = "https://i.imgur.com/olatJag.png"
 
 class Projects extends Component {
 
     render() {
         const bsm = "Web application developed for a student organization that has presence in 200 colleges " +
-            "around Texas.";    
+            "around Texas.";
 
         const jdenticonTxt = "Identicon generator from text, created using React and a javascript library named jdenticon.";
 
@@ -48,19 +55,19 @@ class Projects extends Component {
                 <ProjectsContainer>
                     <ProjectsText>Projects <Line width="80vw"/> </ProjectsText>
 
-                     <Card img={wa1} text={wa} header="Translation Exchange" width="57vw" />
-                     <Card img={bsmWeb} text={bsm} header="Baptist student ministry"/>
-                     <Card img={henna} text ={caminando}header ="Cristo por Henna"/>
+                     <Card img={wa1} text={wa} header="Translation Exchange" width="53vw" />
+                     <Card img={bsmWeb} text={bsm} header="Baptist student ministry" width="53vw"/>
+                     <Card img={henna} text ={caminando}header ="Cristo por Henna" width="53vw"/>
                      <MobileCard
                        color="#ee6f6f"
                        img={mobileImg}
                        text={mobile}
                        width="22vw"
                        header="BSM Survey app"/>
-                       <Card img={unity1} text ={unityGame} width="57vw" header ="Racing game"/>
-                       <Card img={jdenticon} text ={jdenticonTxt} width="57vw" header ="Identicon Generator"/>
-                       <Card img={localizerTrans} text ={localizerTransTxt} width="57vw" header ="Localizer Translator"/>
-                       <Card img={localizerGen} text ={localizerGenTxt} width="57vw" header ="Localizer Generator"/>
+                       <Card img={unity1} text ={unityGame} width="53vw" header ="Racing game"/>
+                       <Card img={jdenticon} text ={jdenticonTxt} width="53vw" header ="Identicon Generator"/>
+                       <Card img={localizerTrans} text ={localizerTransTxt} width="53vw" header ="Localizer Translator"/>
+                       <Card img={localizerGen} text ={localizerGenTxt} width="53vw" header ="Localizer Generator"/>
 
 
 

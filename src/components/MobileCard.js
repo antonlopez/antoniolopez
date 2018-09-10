@@ -63,7 +63,7 @@ const ImageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 53vw;
     background-color: ${props => props.color};
     border-radius: .5vw;
 `;
