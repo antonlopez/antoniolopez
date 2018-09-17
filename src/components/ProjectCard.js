@@ -48,12 +48,13 @@ const Header = styled.h1`
 `;
 
 const Text = styled.p `
+    text-align: justify;
     padding-top: 1vw;
     color: #fff;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: lighter;
     font-size: 1.3vw;
-    width: 28vw;
+    width: 26vw;
     letter-spacing: .6px;
 
 `;

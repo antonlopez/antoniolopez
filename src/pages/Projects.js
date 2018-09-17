@@ -5,48 +5,68 @@ import ParticlesBackground from '../components/ParticlesBackground';
 import Card from '../components/ProjectCard';
 import MobileCard from '../components/MobileCard';
 import HomeButton from '../components/HomeBtn';
-//import bsm3 from '../img/bsm3.png';
-//import bsmWeb from '../img/bsmWeb.png'
-//import henna from '../img/cristoPor.png';
-//import mobileImg from '../img/mobile1.png';
-//import wa1 from '../img/wa1.png';
-//import unity1 from '../img/unityGame.png';
-//import jdenticon from '../img/jdenticon.png';
-//import localizerGen from '../img/localizerGen.png'
-//import localizerTrans from '../img/localizerTrans.png'
 
-const bsmWeb = "https://i.imgur.com/yyTG1FI.png";
-const mobileImg = "https://i.imgur.com/ZSLL7eR.png";
-const henna="https://i.imgur.com/aDmMj07.png";
-const wa1 ="https://i.imgur.com/8kOv7nV.png";
-const unity1 ="https://i.imgur.com/qNzWpmk.png"
-const jdenticon = "https://i.imgur.com/uqq64F0.png";
-const localizerGen = "https://i.imgur.com/3Sjlz0k.png";
-const localizerTrans = "https://i.imgur.com/olatJag.png"
+
+//const bsmWeb = "https://i.imgur.com/yyTG1FI.png";
+//const mobileImg = "https://i.imgur.com/ZSLL7eR.png";
+//const henna="https://i.imgur.com/aDmMj07.png";
+//const wa1 ="https://i.imgur.com/8kOv7nV.png";
+//const unity1 ="https://i.imgur.com/qNzWpmk.png"
+//const jdenticon = "https://i.imgur.com/uqq64F0.png";
+//const localizerGen = "https://i.imgur.com/3Sjlz0k.png";
+//const localizerTrans = "https://i.imgur.com/olatJag.png"
+
+const URL = "https://firebasestorage.googleapis.com/v0/b/antonio-webpage.appspot.com/o/";
+// const bsmWeb = `${URL}bsm1.png?alt=media&token=9d55417e-0cdb-437d-bb67-c3e6d2b3e344`;
+// const mobileImg = `${URL}mobile1.png?alt=media&token=66d28fda-92da-4e73-87eb-8258baa77dc3`;
+// const henna = `${URL}henna1.png?alt=media&token=2c46660e-a659-421f-a54f-8f2eeac46cd6`;
+// const wa1 = `${URL}wa1.png?alt=media&token=a6d0ada7-5d27-404c-ad25-e14026789605`;
+// const unity1 = `${URL}unityGame.png?alt=media&token=0e5569fa-e7c2-4aa2-a75c-b1e5151ec3bc`;
+// const jdenticon = `${URL}jdenticon.png?alt=media&token=6400e9f2-002e-4b90-bc39-838feb2c5297`;
+// const localizerGen =`${URL}localierGen.png?alt=media&token=e773fc59-b3f7-438a-a5b9-a2cc727d839e`;
+// const localizerTrans =`${URL}localizerTrans.png?alt=media&token=529d8953-059f-4cd0-8fda-460c620f00a1`;
+
 
 class Projects extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        bsmWeb: `${URL}bsm1.png?alt=media&token=9d55417e-0cdb-437d-bb67-c3e6d2b3e344`,
+        mobileImg :`${URL}mobile1.png?alt=media&token=66d28fda-92da-4e73-87eb-8258baa77dc3`,
+        henna:`${URL}henna1.png?alt=media&token=2c46660e-a659-421f-a54f-8f2eeac46cd6`,
+        wa1: `${URL}wa1.png?alt=media&token=a6d0ada7-5d27-404c-ad25-e14026789605`,
+        unity1:`${URL}unityGame.png?alt=media&token=0e5569fa-e7c2-4aa2-a75c-b1e5151ec3bc`,
+        jdenticon: `${URL}jdenticon.png?alt=media&token=6400e9f2-002e-4b90-bc39-838feb2c5297`,
+        localizerGen: `${URL}localierGen.png?alt=media&token=e773fc59-b3f7-438a-a5b9-a2cc727d839e`,
+        localizerTrans: `${URL}localizerTrans.png?alt=media&token=529d8953-059f-4cd0-8fda-460c620f00a1`
+        }
+    }
 
     render() {
+      const {bsmWeb, mobileImg, henna, wa1, unity1, jdenticon, localizerGen, localizerTrans} = this.state;
+
         const bsm = "Web application developed for a student organization that has presence in 200 colleges " +
-            "around Texas.";
+            "around Texas. It is a tool to display the information collected by the BSM Survey APP";
 
-        const jdenticonTxt = "Identicon generator from text, created using React and a javascript library named jdenticon.";
+        const jdenticonTxt = "Creates a unique identicon from characters. Developed using React and a Javascript library named jdenticon.";
 
-        const unityGame = "Racing game developed in a cross platform game engine called Unity.";
+        const unityGame = "Racing game developed in C# using a cross platform game engine called Unity. This was developed as a hobby because I always wanted to develop a game.";
 
         const localizerTransTxt = "Electron desktop app developed in order to help in the translation of websites based on screenshots.";
 
         const localizerGenTxt = "Desktop App developed in Electron, used to generate a compressed file that contains screenshots and a json file associated to them, so " +
         "it can be feeded into Localizer translator and translate a website.";
 
-        const mobile = "Mobile application developed in React-Native for the Baptist student ministry, available in the App store and Google Playstore.";
+        const mobile = "Mobile application used to survey students around colleges campus. It was developed using React-Native and Google Firebase, it is available in the App store and Google Playstore.";
 
-        const caminando = "Web application that helps distributing material that teaches how to create henna tattoos to share the gospel in spanish." +
+        const caminando = "Web application that contains material to teach how to create henna tattoos to share the gospel in spanish." +
             " Project in development...";
 
-        const wa = "Open source web application developed in React and Django, developed for bible translators used for management and review translations for oral communities."
+        const wa = " Translation exchange is open source web application developed in React and Django. It is being developed to help bible translators reach out oral communities around the world to accelerate the process of making a bible in every language";
 
         const {width, height}=this.state || 0;
+
+
 
         return (
             <Container>
@@ -56,7 +76,7 @@ class Projects extends Component {
                     <ProjectsText>Projects <Line width="80vw"/> </ProjectsText>
 
                      <Card img={wa1} text={wa} header="Translation Exchange" width="53vw" />
-                     <Card img={bsmWeb} text={bsm} header="Baptist student ministry" width="53vw"/>
+                     <Card img={bsmWeb} text={bsm} header="Baptist Student Ministry" width="53vw"/>
                      <Card img={henna} text ={caminando}header ="Cristo por Henna" width="53vw"/>
                      <MobileCard
                        color="#ee6f6f"
@@ -82,7 +102,7 @@ class Projects extends Component {
                           width="560"
                           height="315"
                           src="https://www.youtube.com/embed/66bU4dFE57E?rel=0&amp;controls=0&amp;showinfo=0"
-                          frameborder="0" allowfullscreen = {false}>
+                          frameBorder="0" allowFullScreen = {false}>
                       </iframe>
                           <VideoText align="center" >
                               UART communication between a microprocessor and Processing. The system senses gyroscope data in real time.
@@ -94,8 +114,8 @@ class Projects extends Component {
                             width="560"
                             height="315"
                             src="https://www.youtube.com/embed/lJlNHwAQjiA?rel=0&amp;controls=0&amp;showinfo=0&amp;start=23"
-                            frameborder="0"
-                            allowfullscreen>
+                            frameBorder="0"
+                            allowFullScreen = {false}>
                         </iframe>
                         <VideoText  align="center" >
                             Prototype of a real time flight remote simulator. The system responds to data received from
@@ -108,8 +128,8 @@ class Projects extends Component {
                                 width="560"
                                 height="315"
                                 src="https://www.youtube.com/embed/k1OkFEw4Kds?rel=0&amp;controls=0&amp;showinfo=0"
-                                frameborder="0"
-                                allowfullscreen>
+                                frameBorder="0"
+                                allowFullScreen = {false}>
                         </iframe>
                             <VideoText align="center" >
                                Head tracking system for FPV, using smartphone internal gyroscope and developed on android.

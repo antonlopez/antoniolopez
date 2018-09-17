@@ -18,9 +18,9 @@ class AboutMe extends Component {
                    <div style={styles.division}>
                        <p style={styles.subHeader}> Professional </p>
                        <p align='justify' style={styles.text}>
-                           I worked at Wycliffe associates as a software developer for 1 year, I did my B.S. in Electrical
-                           Engineering at the University of Texas at El Paso. I can develop web applications in React/Redux,
-                           and mobile apps in React Native and Android.
+                         I graduated on May 2017 with a B.S. degree in Electrical Engineering at the University of Texas in El Paso.
+                         From 2017-2018 I worked as a software developer at Wycliffe Associates. I can develop web applications in React/Redux,
+                         and mobile apps in React Native and Android.
                        </p>
                        <p style={styles.text}>Skills:</p>
                        <ul style={styles.text}>
@@ -35,10 +35,10 @@ class AboutMe extends Component {
                    </div>
                     <div style={styles.division}>
                         <p style={styles.subHeader}> Personal </p>
-                        <p style={styles.text}> I am an extroverted person, I like to make new friends. I like sports, I play
-                            soccer, racquetball, tennis and some volleyball. I love to travel, I have been missionary in Different places of Mexico like Oaxaca, Celaya and Juarez,
-                            In U.S. I have served in Kenai, Alaska and South Padre Island in Texas and also had the opportunity to go to Heredia, Costa Rica. During college I was involved as a leader at the Baptist Student Ministry
-                            in El paso, Texas. I enjoy being around people and teach them something new if I can or learn from them.
+                        <p style={styles.text}> I am an extroverted person who likes to make new friends and enjoys sports.
+                            I like to play soccer, racquetball, tennis and some volleyball. I love to travel. I have done missionary work in different places of Mexico such as, Oaxaca, Celaya and Juarez.
+                            In the U.S. I have served in Kenai, AK, South Padre Island, TX, and also had the opportunity to go to Heredia, Costa Rica. During college I was involved as a leader at the Baptist Student Ministry
+                            in El Paso, TX. I enjoy teaching people something new if I can or learn from them.
                         </p>
                         <div style = {styles.video}>
                             <iframe
@@ -46,9 +46,9 @@ class AboutMe extends Component {
                                 width="518"
                                 height="315"
                                 src="https://www.youtube.com/embed/SBHoV-l60FA"
-                                frameborder="0"
+                                frameBorder="0"
                                 gesture="media"
-                                allowfullscreen>
+                                allowFullScreen>
                             </iframe>
                         </div>
                    </div>

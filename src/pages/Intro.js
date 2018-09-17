@@ -6,14 +6,19 @@ import ParticlesBackground from '../components/ParticlesBackground';
 //import projects from '../img/projects.png'
 //import about from '../img/about.png'
 import '../css/image.css';
+import '../css/me.css';
 import SideIcons from '../components/SideIcons';
 
 
-const me = "https://i.imgur.com/GtDEIwy.png";
-const projects = "https://i.imgur.com/oK012d7.png";
-const about = "https://i.imgur.com/XIWTVJC.png";
+const URL = "https://firebasestorage.googleapis.com/v0/b/antonio-webpage.appspot.com/o/";
+
+
+const me = `${URL}me2.png?alt=media&token=8a7d1335-0c57-4dc8-ad62-85b658b554a7`;
+const projects = `${URL}projects.png?alt=media&token=5cd8db5d-d8be-43d6-b75c-9c38321e6548`;
+const about = `${URL}about.png?alt=media&token=9f100394-442c-4dd4-ad84-d4614d3465fb`;
 
 class Intro extends Component {
+
 
 
     openProjects()  {
@@ -24,14 +29,14 @@ class Intro extends Component {
           this.props.history.push('./aboutme');
     }
 
-
     render() {
+
         const {width, height}=this.state || 0;
 
         return (
             <Container>
                 <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>
-                <ImgContainer >
+                <ImgContainer class="glitch" >
                     <ImageMyself alt="Me" src={me} />
                 </ImgContainer>
                 <CenterContainer>

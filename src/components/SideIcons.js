@@ -15,7 +15,6 @@ const SideIcons = () =>{
             <LinkedinContainer>
                 <Image alt="linkedin" src={linkedin}/>
                 <AnchorContainer href="https://www.linkedin.com/in/antonio-lopez-01383012a">Linkedin</AnchorContainer>
-
             </LinkedinContainer>
             <GithubContainer>
                 <Image alt="github" src={github}/>
@@ -30,8 +29,6 @@ const SideIcons = () =>{
                 <TextContainer> El Paso, Texas</TextContainer>
             </LocationContainer>
         </Container>
-
-
     );
 
 };
