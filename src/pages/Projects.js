@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
 import {fadeIn} from 'react-animations';
 import ParticlesBackground from '../components/ParticlesBackground';
+import {isMobile} from 'react-device-detect';
 import Card from '../components/ProjectCard';
 import MobileCard from '../components/MobileCard';
 import HomeButton from '../components/HomeBtn';
@@ -70,7 +71,7 @@ class Projects extends Component {
 
         return (
             <Container>
-                <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>
+                {isMobile ? '': <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/> }
                 <HomeButton history={this.props.history} />
                 <ProjectsContainer>
                     <ProjectsText>Projects <Line width="80vw"/> </ProjectsText>

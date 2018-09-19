@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {fadeIn} from 'react-animations';
 import styled, {keyframes} from 'styled-components';
+import {isMobile} from 'react-device-detect';
 import ParticlesBackground from '../components/ParticlesBackground';
 //import me from '../img/me2.png'
 //import projects from '../img/projects.png'
@@ -26,7 +27,7 @@ class Intro extends Component {
     };
 
     openAbout(){
-          this.props.history.push('./aboutme');
+        this.props.history.push('./aboutme');
     }
 
     render() {
@@ -35,7 +36,7 @@ class Intro extends Component {
 
         return (
             <Container>
-                <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>
+              {isMobile ? '' : <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/> }
                 <ImgContainer class="glitch" >
                     <ImageMyself alt="Me" src={me} />
                 </ImgContainer>

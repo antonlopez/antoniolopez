@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components';
+import {isMobile} from 'react-device-detect';
 import {fadeIn} from 'react-animations';
 import ParticlesBackground from '../components/ParticlesBackground';
 import HomeButton from '../components/HomeBtn';
@@ -11,7 +12,7 @@ class AboutMe extends Component {
       const {width, height}=this.state || 0;
         return (
             <Container>
-                <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>
+                {isMobile ? '' : <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>}
                 <HomeButton history={this.props.history} />
                 <h1 style={styles.header}>About Me</h1>
                 <div style={styles.container}>
