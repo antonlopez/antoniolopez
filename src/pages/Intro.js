@@ -36,7 +36,7 @@ class Intro extends Component {
 
         return (
             <Container>
-              {isMobile ? '' : <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/> }
+              {isMobile ? <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/> : ''  }
                 <ImgContainer class="glitch" >
                     <ImageMyself alt="Me" src={me} />
                 </ImgContainer>

@@ -10,6 +10,7 @@ class AboutMe extends Component {
 
     render() {
       const {width, height}=this.state || 0;
+
         return (
             <Container>
                 {isMobile ? '' : <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>}
