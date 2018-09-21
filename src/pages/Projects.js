@@ -70,7 +70,7 @@ class Projects extends Component {
 
 
         return (
-            <Container>
+            <Container isMobile={isMobile}>
                 {isMobile ? '': <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/> }
                 <HomeButton history={this.props.history} />
                 <ProjectsContainer>
@@ -100,8 +100,8 @@ class Projects extends Component {
                       <VideoContainer>
                       <iframe
                           title="project 1"
-                          width="560"
-                          height="315"
+                          width="600vw"
+                          height="400vw"
                           src="https://www.youtube.com/embed/66bU4dFE57E?rel=0&amp;controls=0&amp;showinfo=0"
                           frameBorder="0" allowFullScreen = {false}>
                       </iframe>
@@ -112,8 +112,8 @@ class Projects extends Component {
                       <VideoContainer>
                         <iframe
                             title="project 2"
-                            width="560"
-                            height="315"
+                            width="600vw"
+                            height="400vw"
                             src="https://www.youtube.com/embed/lJlNHwAQjiA?rel=0&amp;controls=0&amp;showinfo=0&amp;start=23"
                             frameBorder="0"
                             allowFullScreen = {false}>
@@ -126,8 +126,8 @@ class Projects extends Component {
                       <VideoContainer>
                         <iframe
                                 title="project 3"
-                                width="560"
-                                height="315"
+                                width="600vw"
+                                height="400vw"
                                 src="https://www.youtube.com/embed/k1OkFEw4Kds?rel=0&amp;controls=0&amp;showinfo=0"
                                 frameBorder="0"
                                 allowFullScreen = {false}>
@@ -150,7 +150,7 @@ const VideoContainer = styled.div`
   display:flex;
   flex-direction:column;
   color:white;
-  width: 560px;
+  width: 43vw;
   margin-top: 3vw;
   background: rgba(45,45,45,0.5);
   border-radius: 10px;
@@ -166,10 +166,13 @@ const VideoText = styled.div`
   height: 7vw;
   display: flex;
   align-items: center;
-
 `;
 
 const Container = styled.div`
+        background-color: ${props => props.isMobile ? '#000' : ''}
+        position: absolute;
+        top:0;
+        left:0
         width: 100%;
         height:100%;
     `;
@@ -178,8 +181,6 @@ const Container = styled.div`
 const ProjectsContainer = styled.div`
         padding-top: 3vw;
         padding-left: 4vw;
-
-
     `;
 
 

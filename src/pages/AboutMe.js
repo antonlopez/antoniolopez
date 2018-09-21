@@ -9,10 +9,10 @@ import HomeButton from '../components/HomeBtn';
 class AboutMe extends Component {
 
     render() {
-      const {width, height}=this.state || 0;
+      const {width, height } = this.state || 0;
 
         return (
-            <Container>
+            <Container isMobile={isMobile}>
                 {isMobile ? '' : <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>}
                 <HomeButton history={this.props.history} />
                 <h1 style={styles.header}>About Me</h1>
@@ -45,8 +45,8 @@ class AboutMe extends Component {
                         <div style = {styles.video}>
                             <iframe
                                 title="Mission"
-                                width="518"
-                                height="315"
+                                width="550vw"
+                                height="350vw"
                                 src="https://www.youtube.com/embed/SBHoV-l60FA"
                                 frameBorder="0"
                                 gesture="media"
@@ -64,6 +64,10 @@ class AboutMe extends Component {
 const fadeInAnimation = keyframes`${fadeIn}`;
 
 const Container = styled.div`
+        background-color: ${props => props.isMobile ? '#000' : ''}
+        position: absolute;
+        top: 0;
+        left: 0;
         animation: ${fadeInAnimation} .7s ease-in-out;
         width: 100%;
         height:100%;

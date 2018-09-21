@@ -36,7 +36,7 @@ class Intro extends Component {
 
         return (
             <Container>
-              {isMobile ? <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/> : ''  }
+              {isMobile ? ''  : <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>  }
                 <ImgContainer class="glitch" >
                     <ImageMyself alt="Me" src={me} />
                 </ImgContainer>
@@ -71,6 +71,9 @@ class Intro extends Component {
     const fadeInAnimation = keyframes`${fadeIn}`;
 
     const Container = styled.div`
+        position: absolute;
+        top:0;
+        left: 0;
         width: 100%;
         height:100%;
         display: flex;
