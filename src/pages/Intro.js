@@ -58,8 +58,6 @@ class Intro extends Component {
                         />
                     </NavigatorsContainer>
                 </CenterContainer>
-
-
                 <SideIcons/>
 
             </Container>
@@ -92,6 +90,7 @@ class Intro extends Component {
         justify-content:center;
         flex-direction:column;
         padding-right: 6vw;
+        height: 42vw;
     `;
 
     const Header = styled.h1`
