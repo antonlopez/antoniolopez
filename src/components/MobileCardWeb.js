@@ -6,42 +6,31 @@ import Fade from 'react-reveal/Fade'
 
 
 
-export default ({img, text, header, width, color, isMobile}) => {
-
+export default ({img, text, header, width, color}) => {
 
     return(
-        <Container isMobile={isMobile}>
-          <Fade bottom>
-          {isMobile ? <Header isMobile = {isMobile}>{header}</Header> : '' }
-            <ImageContainer isMobile={isMobile} color={color}>
-                <Img isMobile ={isMobile} width={width} src={img} alt='alt' />
+        <Container>
+            <ImageContainer color={color}>
+                <Img width={width} src={img} alt='alt' />
             </ImageContainer>
-            {isMobile ?
-              ''
-            :
             <TextContainer>
-                <Header isMobile={isMobile}>{header}</Header>
+                <Header>{header}</Header>
                 <Text>{text}</Text>
             </TextContainer>
-            }
-          </Fade>
         </Container>
     );
-
 };
 
 const lightSpeedIn_animation = keyframes`${zoomIn}`;
 
 
 const Container = styled.div`
-    align-items: ${props => props.isMobile ? 'center':''};
     width: 100%;
     margin-top: 9vh;
     background-color: transparent;
     border-radius: .5vw;
     justify-content: space-between;
     display:flex;
-    flex-direction: ${props => props.isMobile ? 'column': ''}
 `;
 
 
@@ -49,8 +38,7 @@ const Header = styled.h1`
     color: #fff;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: lighter;
-    font-size: ${props => props.isMobile ? '4.9vw' : '1.9vw' } ;
-    text-align: ${props => props.isMobile ? 'center' : '' } ;
+    font-size:  1.9vw;
     letter-spacing: 1px;
 
 
@@ -72,15 +60,14 @@ const ImageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: ${props => props.isMobile ? '95vw': '53vw'};
-    height: ${props => props.isMobile ? '60vw': ''};
+    width:53vw;
     background-color: ${props => props.color};
     border-radius: .5vw;
 `;
 
 const Img = styled.img`
     width: ${props => props.width};
-    height: ${props => props.isMobile ? '72vw': '30vw'} ;
+    height: 30vw ;
     border-radius: .5vw;
 
     `;

@@ -3,8 +3,8 @@ import styled, {keyframes} from 'styled-components';
 import {fadeIn} from 'react-animations';
 import ParticlesBackground from '../components/ParticlesBackground';
 import {isMobile} from 'react-device-detect';
-import Card from '../components/ProjectCard';
-import MobileCard from '../components/MobileCardWeb';
+import Card from '../components/MobileProjectCard';
+import MobileCard from '../components/MobileCard';
 import HomeButton from '../components/HomeBtn';
 
 
@@ -28,7 +28,7 @@ const URL = "https://firebasestorage.googleapis.com/v0/b/antonio-webpage.appspot
 // const localizerTrans =`${URL}localizerTrans.png?alt=media&token=529d8953-059f-4cd0-8fda-460c620f00a1`;
 
 
-class Projects extends Component {
+class ProjectsMobile extends Component {
     constructor(props){
       super(props);
       this.state = {
@@ -70,77 +70,24 @@ class Projects extends Component {
 
 
         return (
-            <Container isMobile={isMobile}>
-                {isMobile ? '': <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/> }
-                <HomeButton history={this.props.history} />
+            <Container >
                 <ProjectsContainer>
-                    <ProjectsText>Projects <Line width="80vw"/> </ProjectsText>
-
+                    <ProjectsText>Projects </ProjectsText>
                      <Card img={wa1} text={wa} header="Translation Exchange" width="53vw" />
                      <Card img={bsmWeb} text={bsm} header="Baptist Student Ministry" width="53vw"/>
                      <Card img={henna} text ={caminando}header ="Cristo por Henna" width="53vw"/>
                      <MobileCard
+                       isMobile={true}
                        color="#ee6f6f"
                        img={mobileImg}
                        text={mobile}
-                       width="22vw"
+                       width="49vw"
                        header="BSM Survey app"/>
                        <Card img={unity1} text ={unityGame} width="53vw" header ="Racing game"/>
                        <Card img={jdenticon} text ={jdenticonTxt} width="53vw" header ="Identicon Generator"/>
                        <Card img={localizerTrans} text ={localizerTransTxt} width="53vw" header ="Localizer Translator"/>
                        <Card img={localizerGen} text ={localizerGenTxt} width="53vw" header ="Localizer Generator"/>
-
-
-
-
                 </ProjectsContainer>
-                <ProjectsContainer>
-                    <ProjectsText>Cool Stuff <Line width="78vw"/> </ProjectsText>
-                    <CoolStuffContainer>
-                      <VideoContainer>
-                      <iframe
-                          title="project 1"
-                          width="600vw"
-                          height="400vw"
-                          src="https://www.youtube.com/embed/66bU4dFE57E?rel=0&amp;controls=0&amp;showinfo=0"
-                          frameBorder="0" allowFullScreen = {false}>
-                      </iframe>
-                          <VideoText align="center" >
-                              UART communication between a microprocessor and Processing. The system senses gyroscope data in real time.
-                          </VideoText>
-                      </VideoContainer>
-                      <VideoContainer>
-                        <iframe
-                            title="project 2"
-                            width="600vw"
-                            height="400vw"
-                            src="https://www.youtube.com/embed/lJlNHwAQjiA?rel=0&amp;controls=0&amp;showinfo=0&amp;start=23"
-                            frameBorder="0"
-                            allowFullScreen = {false}>
-                        </iframe>
-                        <VideoText  align="center" >
-                            Prototype of a real time flight remote simulator. The system responds to data received from
-                            a gyroscope placed on a UAV and the motion is controlled by a pneumatic system.
-                        </VideoText>
-                      </VideoContainer>
-                      <VideoContainer>
-                        <iframe
-                                title="project 3"
-                                width="600vw"
-                                height="400vw"
-                                src="https://www.youtube.com/embed/k1OkFEw4Kds?rel=0&amp;controls=0&amp;showinfo=0"
-                                frameBorder="0"
-                                allowFullScreen = {false}>
-                        </iframe>
-                            <VideoText align="center" >
-                               Head tracking system for FPV, using smartphone internal gyroscope and developed on android.
-                            </VideoText>
-                      </VideoContainer>
-                    </CoolStuffContainer>
-                </ProjectsContainer>
-
-
-
             </Container>
         );
     }
@@ -169,18 +116,17 @@ const VideoText = styled.div`
 `;
 
 const Container = styled.div`
-        background-color: ${props => props.isMobile ? '#000' : ''}
-        position: absolute;
-        top:0;
-        left:0
-        width: 100%;
-        height:100%;
+        background-color: #000;
+        display flex;
+        flex-wrap: wrap;
+        margin-top: 151vw;
     `;
 
 
 const ProjectsContainer = styled.div`
-        padding-top: 3vw;
-        padding-left: 4vw;
+        background-color: #000;
+        height: 100%;
+        width: 100%;
     `;
 
 
@@ -203,13 +149,10 @@ const ProjectsText = styled.h1`
         color: #fff;
         font-family: "Helvetica Neue", sans-serif;
         font-weight: lighter;
-        font-size: 2.5vw;
+        text-align: center;
+        font-size: 8vw;
         letter-spacing: .2vw;
         animation: ${fadeInanimation} 1s ease-in-out;
-        margin-bottom: 5vw;
         `;
 
-
-
-
-export default Projects;
+export default ProjectsMobile;

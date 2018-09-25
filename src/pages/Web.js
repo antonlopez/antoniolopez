@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {fadeIn} from 'react-animations';
 import styled, {keyframes} from 'styled-components';
 import {isMobile} from 'react-device-detect';
 import ParticlesBackground from '../components/ParticlesBackground';
@@ -9,8 +8,8 @@ import about from '../img/about.png'
 import '../css/image.css';
 import '../css/me.css';
 import SideIcons from '../components/SideIcons';
-import Mobile from './Mobile';
-import Web from './Web';
+
+
 
 
 //const URL = "https://firebasestorage.googleapis.com/v0/b/antonio-webpage.appspot.com/o/";
@@ -18,7 +17,7 @@ import Web from './Web';
 // const projects = `${URL}projects.png?alt=media&token=5cd8db5d-d8be-43d6-b75c-9c38321e6548`;
 // const about = `${URL}about.png?alt=media&token=9f100394-442c-4dd4-ad84-d4614d3465fb`;
 
-class Intro extends Component {
+class Web extends Component {
 
     openProjects()  {
         this.props.history.push('./projects');
@@ -32,15 +31,37 @@ class Intro extends Component {
 
         const {width, height}=this.state || 0;
         return (
-            <Container isMobile={isMobile} >
-            {isMobile ? <Mobile/> : <Web history = {this.props.history}/>}
+            <Container >
+               <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>
+                <ImgContainer class="glitch" >
+                    <ImageMyself alt="Me" src={me} />
+                </ImgContainer>
+                <CenterContainer>
+                    <TextContainer>
+                        <Header> Hi! My name is Antonio Lopez.</Header>
+                        <IntroductionText> I am a front end developer and I like to make things work :) </IntroductionText>
+                    </TextContainer>
+
+                      <NavigatorsContainer>
+                           <ImageProject
+                               alt="Projects"
+                               src={projects}
+                               onClick={()=>this.openProjects()}
+                           />
+                           <ImageAbout
+                               alt="Img"
+                               src={about}
+                               onClick={()=>this.openAbout()}
+                           />
+                       </NavigatorsContainer>
+                </CenterContainer>
             </Container>
         );
     }
 }
 
 
-    const fadeInAnimation = keyframes`${fadeIn}`;
+
 
     const Container = styled.div`
         position: absolute;
@@ -50,7 +71,6 @@ class Intro extends Component {
         height:100%;
         display: flex;
         justify-content: ${props => props.isMobile ? 'space-between' : '' };
-        animation: ${fadeInAnimation} 1s ease-in-out;
     `;
 
     const TextContainer = styled.div`
@@ -118,4 +138,4 @@ class Intro extends Component {
     `;
 
 
-export default Intro;
+export default Web;
