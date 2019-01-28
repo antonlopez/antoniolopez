@@ -43,7 +43,7 @@ class ContactMobile extends Component {
 
     const Container = styled.div`
       margin-top: 698vw;
-      margin-bottom: 22vw;
+      margin-bottom: 62vw;
       width: 100%;
       height:100%;
       display: flex;

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Fade from 'react-reveal/Fade'
-
-
-
+import Fade from 'react-reveal/Fade';
 
 
 export default ({img, text, header, width}) => {
@@ -21,7 +18,6 @@ export default ({img, text, header, width}) => {
     );
 
 };
-
 
 const Container = styled.div`
     width: 100%;

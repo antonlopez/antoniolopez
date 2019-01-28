@@ -28,33 +28,41 @@ class Web extends Component {
     }
 
     render() {
+      // <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>
 
         const {width, height}=this.state || 0;
         return (
             <Container >
-               <ParticlesBackground backgroundColor={'#fff'} color={"#3CA9D1"} width={width} height={height}/>
+
                 <ImgContainer class="glitch" >
                     <ImageMyself alt="Me" src={me} />
                 </ImgContainer>
                 <CenterContainer>
                     <TextContainer>
                         <Header> Hi! My name is Antonio Lopez.</Header>
-                        <IntroductionText> I am a front end developer and I like to make things work :) </IntroductionText>
+                        <IntroductionText> I am a software Engineer passionate about coding who likes to make things work </IntroductionText>
                     </TextContainer>
 
                       <NavigatorsContainer>
-                           <ImageProject
-                               alt="Projects"
-                               src={projects}
-                               onClick={()=>this.openProjects()}
-                           />
-                           <ImageAbout
-                               alt="Img"
-                               src={about}
-                               onClick={()=>this.openAbout()}
-                           />
+                        <ImgWrapper>
+                          <ImageProject
+                              alt="Projects"
+                              src={projects}
+                              onClick={()=>this.openProjects()}
+                          />
+                        </ImgWrapper>
+                        <ImgWrapper>
+                          <ImageAbout
+                              alt="Img"
+                              src={about}
+                              onClick={()=>this.openAbout()}
+                          />
+                        </ImgWrapper>
+
+
                        </NavigatorsContainer>
                 </CenterContainer>
+                <SideIcons/>
             </Container>
         );
     }
@@ -77,6 +85,8 @@ class Web extends Component {
     `;
 
     const ImgContainer = styled.div `
+        height: 13vw
+        width:25vw;
     `;
 
     const CenterContainer = styled.div `
@@ -85,6 +95,7 @@ class Web extends Component {
         flex-direction:column;
         padding-right: 6vw;
         height: 42vw;
+        margin-left:8vw;
     `;
 
     const Header = styled.h1`
@@ -121,7 +132,7 @@ class Web extends Component {
         height: 13vw
         width:25vw;
         cursor: pointer;
-        transition: transform 200ms ease-in-out;
+        transition: transform 300ms ease-in-out;
         &:hover {
         transform: scale(1.1);
         }
@@ -131,10 +142,16 @@ class Web extends Component {
         height: 13vw
         width:25vw;
         cursor: pointer;
-        transition: transform 200ms ease-in-out;
+        transition: transform 300ms ease-in-out;
         &:hover {
         transform: scale(1.1);
            }
+    `;
+
+    const ImgWrapper = styled.div`
+      height: 13vw
+      width:25vw;
+      overflow:hidden;
     `;
 
 

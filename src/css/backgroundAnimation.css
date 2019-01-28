@@ -1,0 +1,57 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #111838;
+  background: -moz-linear-gradient(left,  #1e2060 0%, #111838 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1e2060), color-stop(100%,#111838));
+  background: -webkit-linear-gradient(left,  #1e2060 0%,#111838 100%);
+  background: -o-linear-gradient(left,  #1e2060 0%,#111838 100%);
+  background: -ms-linear-gradient(left,  #1e2060 0%,#111838 100%);
+  background: linear-gradient(to right,  #1e2060 0%,#111838 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2060', endColorstr='#111838',GradientType=1 );
+  margin: 0;
+  padding: 0;
+}
+
+.animating-bg {
+  background-image: url("http://i61.tinypic.com/kbb19w.png");
+  background-repeat: repeat;
+  height: 200%;
+  width: 200%;
+  transform: rotate(45deg);
+  top: -50%;
+  left: -50%;
+  position: fixed;
+  animation-name: animate-bg;
+  -webkit-animation-name: animate-bg;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+  -webkit-animation-duration: 15s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes animate-bg
+{
+	0%   {background-position: 0 0;transform: rotate(45deg) scale(1);}
+	50%   {background-position: 0 1000%;transform: rotate(45deg) scale(1);}
+  75%   {transform: rotate(45deg) scale(2);}
+  100%   {background-position: 0 1600%;transform: rotate(45deg) scale(2.75);}
+}
+@-webkit-keyframes animate-bg
+{
+	0%   {background-position: 0 0;transform: rotate(45deg) scale(1);}
+	50%   {background-position: 0 1000%;transform: rotate(45deg) scale(1);}
+  75%   {transform: rotate(45deg) scale(2); opacity: 1}
+  100%   {background-position: 0 1600%;transform: rotate(45deg) scale(2.75); opacity: 0;}
+}

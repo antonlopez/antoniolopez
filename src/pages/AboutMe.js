@@ -13,15 +13,15 @@ class AboutMe extends Component {
 
         return (
             <Container isMobile={isMobile}>
-                {isMobile ? '' : <ParticlesBackground backgroundColor={"#000"} color={"#fff"} width={width} height={height}/>}
+
                 <HomeButton history={this.props.history} />
                 <h1 style={styles.header}>About Me</h1>
                 <div style={styles.container}>
                    <div style={styles.division}>
                        <p style={styles.subHeader}> Professional </p>
                        <p align='justify' style={styles.text}>
-                         I graduated on May 2017 with a B.S. degree in Electrical Engineering at the University of Texas in El Paso.
-                         From 2017-2018 I worked as a software developer at Wycliffe Associates. I can develop web applications in React/Redux,
+                         I graduated on May 2017 with a B.S. degree in Electrical Engineering at the University of Texas in El Paso. I love to code,
+                         from 2017-2018 I worked as a software developer at Wycliffe Associates. I can develop web applications in React/Redux,
                          and mobile apps in React Native and Android.
                        </p>
                        <p style={styles.text}>Skills:</p>
@@ -33,6 +33,7 @@ class AboutMe extends Component {
                            <li>Django( Websockets, REST API's) </li>
                            <li>React native</li>
                            <li>Agile methodology</li>
+                           <li>UI design</li>
                        </ul>
                    </div>
                     <div style={styles.division}>
@@ -68,8 +69,8 @@ const Container = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-        animation: ${fadeInAnimation} .7s ease-in-out;
-        width: 100%;
+        background-color:#000;
+        width: 100vw;
         height:100%;
     `;
 
@@ -78,7 +79,9 @@ const styles = {
     container: {
         display:'flex',
         flexDirection:'row',
-        width: '100%'
+        width: '100%',
+        height:'100%',
+        marginBottom:'5vw'
 
     },
     division:{
@@ -93,7 +96,8 @@ const styles = {
         fontFamily: 'Helvetica Neue, sans-serif',
         fontWeight: 'lighter',
         letterSpacing: 1,
-        lineHeight: 1
+        lineHeight: 1,
+        marginTop:'-4vw'
     },
     subHeader:{
         alignSelf:'center',

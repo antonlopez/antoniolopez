@@ -20,10 +20,6 @@ const SideIcons = () =>{
                 <Image alt="github" src={github}/>
                 <AnchorContainer href="https://github.com/antonlopez">Github</AnchorContainer>
             </GithubContainer>
-            <PhoneContainer>
-                <Image alt="phone" src={phone}/>
-                <p> +1 915 704 71 16</p>
-            </PhoneContainer>
             <LocationContainer>
                 <LocationImage alt="location" src={location} />
                 <TextContainer> El Paso, Texas</TextContainer>
