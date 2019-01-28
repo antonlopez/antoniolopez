@@ -8,8 +8,6 @@ import SlideCard from '../components/ProjectSlideCard';
 import MobileCard from '../components/MobileCardWeb';
 import HomeButton from '../components/HomeBtn';
 import BackgroundImg from '../img/projects_background.jpg';
-import MainMafia from '../img/main_screely.png';
-import ModeratorMafia from '../img/moderator_screely.png';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
