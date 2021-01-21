@@ -8,6 +8,7 @@ import about from '../img/about.png'
 import '../css/image.css';
 import '../css/me.css';
 import SideIcons from '../components/SideIcons';
+import {fadeIn} from 'react-animations';
 
 
 
@@ -32,37 +33,77 @@ class Web extends Component {
 
         const {width, height}=this.state || 0;
         return (
-            <Container >
+            <Container>
+                <LandingContainer>
+                <ImgContainer >
 
-                <ImgContainer class="glitch" >
-                    <ImageMyself alt="Me" src={me} />
                 </ImgContainer>
                 <CenterContainer>
                     <TextContainer>
-                        <Header> Hi! My name is Antonio Lopez.</Header>
-                        <IntroductionText> I am a software Engineer passionate about coding who likes to make things work </IntroductionText>
+                        <Header> Antonio Lopez </Header>
+                        <IntroductionText> I develop Augmented and Virtual Reality for mobile devices  </IntroductionText>
                     </TextContainer>
 
-                      <NavigatorsContainer>
-                        <ImgWrapper>
-                          <ImageProject
-                              alt="Projects"
-                              src={projects}
-                              onClick={()=>this.openProjects()}
-                          />
-                        </ImgWrapper>
-                        <ImgWrapper>
-                          <ImageAbout
-                              alt="Img"
-                              src={about}
-                              onClick={()=>this.openAbout()}
-                          />
-                        </ImgWrapper>
-
-
-                       </NavigatorsContainer>
                 </CenterContainer>
+
                 <SideIcons/>
+                </LandingContainer>
+                <ProjectsContainer>
+                    <ProjectsText><Line width="78vw"/> Projects <Line width="78vw"/> </ProjectsText>
+                    <CoolStuffContainer>
+                      <VideoContainer>
+                      <iframe
+                          title="project 1"
+                          width="600vw"
+                          height="400vw"
+                          src="https://www.youtube.com/embed/zYlmoMW_wZg?rel=0&amp;controls=0&amp;showinfo=0"
+                          frameBorder="0" allowFullScreen = {false}>
+                      </iframe>
+                          <VideoText align="center" >
+                              Papi Bird 360
+                          </VideoText>
+                      </VideoContainer>
+                      <VideoContainer>
+                        <iframe
+                            title="project 2"
+                            width="600vw"
+                            height="400vw"
+                            src="https://www.youtube.com/embed/gcg2uw8mhcU?rel=0&amp;controls=0&amp;showinfo=0&amp;start=23"
+                            frameBorder="0"
+                            allowFullScreen = {false}>
+                        </iframe>
+                        <VideoText  align="center" >
+                          Build Up AR
+                        </VideoText>
+                      </VideoContainer>
+                      <VideoContainer>
+                        <iframe
+                                title="project 3"
+                                width="600vw"
+                                height="400vw"
+                                src="https://www.youtube.com/embed/SSnjEpN43Jc?rel=0&amp;controls=0&amp;showinfo=0"
+                                frameBorder="0"
+                                allowFullScreen = {false}>
+                        </iframe>
+                            <VideoText align="center" >
+                              US Bills AR
+                            </VideoText>
+                      </VideoContainer>
+                      <VideoContainer>
+                        <iframe
+                                title="project 3"
+                                width="600vw"
+                                height="400vw"
+                                src="https://www.youtube.com/embed/64ztzc4qHco?rel=0&amp;controls=0&amp;showinfo=0"
+                                frameBorder="0"
+                                allowFullScreen = {false}>
+                        </iframe>
+                            <VideoText align="center" >
+                              Anatomy AR+
+                            </VideoText>
+                      </VideoContainer>
+                    </CoolStuffContainer>
+                </ProjectsContainer>
             </Container>
         );
     }
@@ -71,17 +112,43 @@ class Web extends Component {
 
 
 
+
     const Container = styled.div`
-        position: absolute;
         top:0;
         left: 0;
         width: 100%;
         height:100%;
+        background-color: #000;
+        justify-content: ${props => props.isMobile ? 'space-between' : '' };
+        padding-bottom:50px;
+    `;
+
+    const LandingContainer = styled.div`
+        width: 100%;
+        height:90%;
         display: flex;
         justify-content: ${props => props.isMobile ? 'space-between' : '' };
     `;
 
+    const ProjectsHeader = styled.h1`
+        color: #fff;
+        font-family: 'Jost', sans-serif;
+        font-weight: lighter;
+        font-size: 2.5vw;
+        margin-top: 0;
+        text-align:center;
+        `;
+
     const TextContainer = styled.div`
+    `;
+
+    const fadeInanimation = keyframes`${fadeIn}`;
+
+    const ProjectsContainer = styled.div`
+        background-color: #000;
+        height: 100%;
+        padding-bottom:70px;
+
     `;
 
     const ImgContainer = styled.div `
@@ -99,8 +166,8 @@ class Web extends Component {
     `;
 
     const Header = styled.h1`
-        color: #111;
-        font-family: "Helvetica Neue", sans-serif;
+        color: #fff;
+        font-family: 'Jost', sans-serif;
         font-weight: lighter;
         font-size: 2.5vw;
         `;
@@ -113,8 +180,8 @@ class Web extends Component {
     `;
 
     const IntroductionText = styled.p`
-        color: #111;
-        font-family: "Helvetica Neue", sans-serif;
+        color: #fff;
+        font-family: 'Jost', sans-serif;
         font-weight: lighter;
         font-size: 1.5vw;
     `;
@@ -153,6 +220,61 @@ class Web extends Component {
       width:25vw;
       overflow:hidden;
     `;
+
+
+    const CoolStuffContainer = styled.div`
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         background-color: #000;
+         padding-bottom:20px;
+    `;
+
+    const VideoContainer = styled.div`
+      display:flex;
+      flex-direction:column;
+      color:white;
+      width: 43vw;
+      margin-top: 3vw;
+      background: rgba(45,45,45,0.5);
+      border-radius: 10px;
+      justify-content:center;
+      align-items:center;
+    `;
+
+    const VideoText = styled.div`
+      color: #fff;
+      font-family: "Helvetica Neue", sans-serif;
+      font-weight: lighter;
+      font-size: 1.2vw;
+      letter-spacing: .1vw;
+      text-align: center;
+      height: 7vw;
+      display: flex;
+      align-items: center;
+      width:100%;
+      justify-content: center;
+    `;
+
+    const ProjectsText = styled.h1`
+            color: #fff;
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: lighter;
+            font-size: 2.5vw;
+            letter-spacing: .2vw;
+            animation: ${fadeInanimation} .3s ease-in-out;
+            margin-bottom: 5vw;
+            margin-top: ${props=> props.marginTop};
+            text-align:center;
+            `;
+
+
+    const Line = ({width})=> { return( <svg height=".8vw" width="20vw">
+                                  <line x1="0" y1="0" x2={width} y2="0" style={{stroke:'#fff', strokeWidth:2}} />
+                               </svg> )} ;
+
+
+
 
 
 export default Web;

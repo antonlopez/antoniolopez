@@ -37,8 +37,8 @@ const Container = styled.div`
 `;
 
 const GithubContainer = styled.div`
-    color: #111;
-    font-family: "Helvetica Neue", sans-serif;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
     font-weight: lighter;
     font-size:.9vw;
     padding-top: 1vw;
@@ -46,16 +46,16 @@ const GithubContainer = styled.div`
 `;
 
 const LinkedinContainer = styled.div`
-    color: #111;
-    font-family: "Helvetica Neue", sans-serif;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
     font-weight: lighter;
     font-size:.9vw;
     display: flex;
 `;
 
 const PhoneContainer = styled.div`
-   color: #111;
-    font-family: "Helvetica Neue", sans-serif;
+   color: #fff;
+    font-family: 'Jost', sans-serif;
     font-weight: lighter;
     font-size:.9vw;
     display: flex;
@@ -63,8 +63,8 @@ const PhoneContainer = styled.div`
 `;
 
 const LocationContainer = styled.div`
-    color: #111;
-    font-family: "Helvetica Neue", sans-serif;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
     font-weight: lighter;
     font-size:.9vw;
     display: flex;
@@ -79,6 +79,8 @@ const TextContainer = styled.p`
 const AnchorContainer = styled.a`
     display: flex;
     align-items: center;
+    font-family: 'Jost', sans-serif;
+    color: #fff;
 `;
 
 const Image = styled.img`

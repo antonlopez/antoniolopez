@@ -2,6 +2,11 @@
   background: inherit;
   will-change: transform;
   transition: transform 0.2s ease;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 
 .animatable.prepare {

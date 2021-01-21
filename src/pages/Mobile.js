@@ -34,13 +34,13 @@ class Mobile extends Component {
         return (
           <Container>
               <IntroContainer>
-                  <ImgContainer class="glitch" >
+                  <ImgContainer >
                       <ImageMyself alt="Me" src={me} />
                   </ImgContainer>
                   <CenterContainer>
                       <TextContainer>
                           <Header> Hi! My name is Antonio Lopez.</Header>
-                          <IntroductionText> I am a front end developer and I like to make things work :) </IntroductionText>
+                          <IntroductionText> I will create your website or mobile app using cutting edge technologies such as Augmented and Virtual Reality </IntroductionText>
                       </TextContainer>
                   </CenterContainer>
                </IntroContainer>
